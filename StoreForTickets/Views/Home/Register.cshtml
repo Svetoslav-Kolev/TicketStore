@@ -1,0 +1,73 @@
+﻿@model StoreForTickets.ViewModels.RegisterVM
+
+@{
+    ViewBag.Title = "Register";
+}
+
+<fieldset>
+    <legend>Register</legend>
+    <form action="/Home/Register" method="post">
+        @Html.HiddenFor(m => m.Id)
+        <div style="clear:both">
+            <div style="width:100px; display:inline-block">
+
+                @Html.LabelFor(m => m.Username)
+            </div>
+            <div style="width:100px; display:inline">
+                @Html.TextBoxFor(m => m.Username)
+            </div>
+            <div style="display:inline">
+                @Html.ValidationMessageFor(m => m.Username)
+            </div>
+        </div>
+
+        <div style="clear:both">
+            <div style="width:100px; display:inline-block">
+                @Html.LabelFor(m => m.Password)
+            </div>
+            <div style="width:100px; display:inline">
+                @Html.PasswordFor(m => m.Password)
+            </div>
+            <div style="display:inline">
+                @Html.ValidationMessageFor(m => m.Password)
+            </div>
+        </div>
+        <div style="clear:both">
+            <div style="width:100px; display:inline-block">
+                @Html.LabelFor(m => m.FirstName)
+            </div>
+            <div style="width:100px; display:inline">
+                @Html.TextBoxFor(m => m.FirstName)
+            </div>
+            <div style="display:inline">
+                @Html.ValidationMessageFor(m => m.FirstName)
+            </div>
+        </div>
+        <div style="clear:both">
+            <div style="width:100px; display:inline-block">
+                @Html.LabelFor(m => m.LastName)
+            </div>
+            <div style="width:100px; display:inline">
+                @Html.TextBoxFor(m => m.LastName)
+            </div>
+            <div style="display:inline">
+                @Html.ValidationMessageFor(m => m.LastName)
+            </div>
+        </div>
+        <div style="clear:both">
+            <div style="width:100px; display:inline-block">
+                @Html.LabelFor(m => m.Address)
+            </div>
+            <div style="width:100px; display:inline">
+                @Html.TextBoxFor(m => m.Address)
+            </div>
+            <div style="display:inline">
+                @Html.ValidationMessageFor(m => m.Address)
+            </div>
+        </div>
+        <div style="clear:both">
+            <input type="submit" value="Register" />
+            <a href="/Home/Index">Cancel</a>
+        </div>
+    </form>
+</fieldset>

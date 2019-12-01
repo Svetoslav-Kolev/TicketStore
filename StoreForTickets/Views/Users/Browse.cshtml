@@ -1,0 +1,29 @@
+﻿@model StoreForTickets.ViewModels.BrowseVM
+
+@{
+    ViewBag.Title = "Browse";
+}
+
+<h2>Browse Events</h2>
+<table>
+    <tr>
+        <td>Name of Event</td>&nbsp;&nbsp;&nbsp;
+        <td>Date</td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <td>Artist</td>&nbsp;&nbsp;&nbsp;
+        <td>Hall Town</td>&nbsp;&nbsp;&nbsp;
+        <td>Length in Minutes</td>
+
+    </tr>
+    @foreach (var item in Model.events)
+    {
+        <tr>
+            <td>@item.Name</td>&nbsp;&nbsp;
+            <td>@item.Date</td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <td>@item.Artist.Name</td>&nbsp;&nbsp;&nbsp;
+            <td>@item.Hall.Town</td>&nbsp;&nbsp;&nbsp;
+            <td>@item.LengthOfEventInMinutes</td>
+
+            <td><a href="/Users/BuyTicket?Id=@item.Id">Buy Ticket</a></td>
+        </tr>
+    }
+</table>

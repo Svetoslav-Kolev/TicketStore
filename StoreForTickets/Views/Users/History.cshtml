@@ -1,0 +1,22 @@
+﻿@model StoreForTickets.ViewModels.HistoryVM
+
+@{
+    ViewBag.Title = "History";
+}
+
+<h2>History of Purchases</h2>
+
+<table>
+    <tr>
+        <td>Ticket id</td>&nbsp;&nbsp;&nbsp;
+        <td>Ticket name</td>&nbsp;&nbsp;&nbsp;
+
+    </tr>
+    @foreach (var item in Model.tickets)
+    {
+    <tr>
+        <td>@item.Id</td>&nbsp;&nbsp;
+        <td>@item.Price</td>&nbsp;&nbsp;
+    </tr>
+    }
+</table>
